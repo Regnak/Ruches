@@ -1,0 +1,434 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"test",
+				"testMY15"
+			],
+			[
+				"kit",
+				"kitList"
+			],
+			[
+				"func",
+				"funcRetour"
+			],
+			[
+				"Cl",
+				"ClassInfoGestion"
+			],
+			[
+				"Cla",
+				"ClassBdd"
+			],
+			[
+				"T",
+				"T_compSurOf"
+			],
+			[
+				"co",
+				"commit"
+			],
+			[
+				"nom",
+				"nomComp"
+			],
+			[
+				"nb",
+				"nbComposants"
+			],
+			[
+				"inter",
+				"inter"
+			],
+			[
+				"x",
+				"x"
+			],
+			[
+				"y",
+				"y"
+			],
+			[
+				"pack",
+				"pack_forget"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"btn",
+				"btnKit"
+			],
+			[
+				"b",
+				"btnCsv"
+			],
+			[
+				"li",
+				"listeChoix"
+			],
+			[
+				"ki",
+				"kitListe"
+			],
+			[
+				"lis",
+				"listeStringPdf"
+			],
+			[
+				"from",
+				"fromWeb"
+			],
+			[
+				"sef",
+				"self"
+			],
+			[
+				"list",
+				"listeFeeder"
+			],
+			[
+				"mar",
+				"margeHaut"
+			],
+			[
+				"sa",
+				"sautPage"
+			],
+			[
+				"marge",
+				"margeDroite"
+			],
+			[
+				"feeder",
+				"feederName"
+			],
+			[
+				"lsi",
+				"listeStringPdf"
+			],
+			[
+				"t",
+				"t"
+			],
+			[
+				"fichier",
+				"fichierKit"
+			],
+			[
+				"interface",
+				"interface"
+			],
+			[
+				"in",
+				"Interface"
+			],
+			[
+				"se",
+				"self"
+			],
+			[
+				"des",
+				"destroy"
+			],
+			[
+				"no",
+				"nomFichierCsv"
+			],
+			[
+				"C",
+				"Canevas"
+			],
+			[
+				"kil",
+				"kitlist"
+			],
+			[
+				"listeF",
+				"listeFichierAff"
+			],
+			[
+				"ajou",
+				"ajoutLigne"
+			],
+			[
+				"data",
+				"data"
+			],
+			[
+				"kitList",
+				"kitListTest"
+			],
+			[
+				"choix",
+				"choixFichier"
+			],
+			[
+				"en",
+				"entree"
+			],
+			[
+				"angle",
+				"angle2"
+			],
+			[
+				"read",
+				"readline"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+			"quit",
+			"exit",
+			"cmd",
+			"dir",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/Documents/Prog/ruches/kivy_activate.bat",
+		"/E/Documents/Prog/ruches/log/kivy_20-05-17_0.txt",
+		"/E/Documents/Prog/ruches/__init__.py",
+		"/E/Documents/Prog/ruches/function/__init__.py",
+		"/E/Documents/Prog/ruches/ClassMainWindow.py",
+		"/E/Documents/Prog/ruches/ClassRucher.py",
+		"/E/Documents/Prog/ruches/ClassRuche.py",
+		"/E/Documents/Prog/ruches/function/ClassRuche.py",
+		"/E/Documents/Prog/ruches/function/ClassMainWindow.py",
+		"/E/Documents/Prog/ruches/function/ClassRucher.py",
+		"/E/Documents/Prog/ruches/main.py",
+		"/E/Documents/Prog/ruches/log/kivy_20-05-17_1.txt",
+		"/E/Documents/Prog/ruches/log/kivy_20-05-17_3.txt",
+		"/E/Documents/Prog/ruches/log/kivy_20-05-17_2.txt",
+		"/C/Users/Sotaz/Desktop/kivy_20-05-16_1.txt",
+		"/F/pcbToVision/func/testBdd.py",
+		"/F/pcbToVision/func/ClassInfoGestion.py",
+		"/F/pcbToVision/func/ClassBdd.py",
+		"/F/pcbToVision/func/ClassParser.py",
+		"/F/pcbToVision/func/ClassInterface.py",
+		"/F/pcbToVision/pcbToVision.py",
+		"/F/pcbToVision/func/ClassKitList.py",
+		"/F/pcbToVision/func/donnee.json",
+		"/E/Documents/Prog/pong/pong.kv",
+		"/C/Users/Sotaz/Desktop/pcbToVision/test_yugi/test.py",
+		"/C/Users/Sotaz/Desktop/pcbToVision/test_yugi/cardinfoset.json",
+		"/E/Documents/Prog/pong/main.py",
+		"/C/Users/Sotaz/Desktop/pcbToVision/test_yugi/cardsets.json",
+		"/C/Users/Sotaz/Desktop/pcbToVision/func/testBdd.py",
+		"/C/Users/Sotaz/Desktop/pcbToVision/func/ClassParser.py",
+		"/C/Users/Sotaz/Desktop/pcbToVision/func/ClassInfoGestion.py",
+		"/C/Users/Sotaz/Desktop/pcbToVision/func/ClassBdd.py",
+		"/C/Users/Sotaz/Desktop/pcbToVision/func/ClassInterface.py",
+		"/C/Users/Sotaz/Desktop/pcbToVision/func/ClassKitList.py",
+		"/C/Users/Sotaz/Desktop/pcbToVision/pcbToVision.py",
+		"/C/Users/Sotaz/Desktop/pcbToVision/test.py",
+		"/E/Program Files/ygopro_vs_links_beta/ygopro_vs_links_beta/script/c511005093.lua",
+		"/C/Users/Sotaz/Desktop/pcbToVision/test_yugi/cardinfotrap.json",
+		"/C/Users/Sotaz/Desktop/pcbToVision/test_yugi/cardsets.php",
+		"/C/Users/Sotaz/Desktop/pcbToVision/test_yugi/cardinfo.php",
+		"/E/Documents/Prog/kivy_venv/share/kivy-examples/demo/showcase/main.py",
+		"/C/Users/Sotaz/Desktop/pcbToVision/setup.py",
+		"/G/pcbToVision/func/ClassParser.py",
+		"/G/pcbToVision/func/ClassInfoGestion.py",
+		"/G/pcbToVision/func/ClassKitList.py",
+		"/G/pcbToVision/func/ClassInterface.py",
+		"/G/pcbToVision/pcbToVision.py",
+		"/G/pcbToVision/func/ClassBdd.py",
+		"/G/pcbToVision/func/testBdd.py",
+		"/F/pcbToVision/ClassBdd.py",
+		"/F/pcbToVision/func/ma_base.db",
+		"/F/pcbToVision/func/ClassKitList - Copie.py",
+		"/F/pcbToVision/func/testrandom.py",
+		"/F/pcbToVision/func/essaiText.py",
+		"/C/Users/Sotaz/Desktop/pendu/pendu.py",
+		"/C/Users/Sotaz/Desktop/pendu/donnees.py",
+		"/C/Users/Sotaz/Desktop/pendu/fonctions.py",
+		"/F/pcbToVision/func/ClassKitlist.py",
+		"/F/pcbToVision/reportlab/__init__.py",
+		"/C/Program Files/Sublime Text 3/sublime.py",
+		"/F/pcbToVision/func/test.py",
+		"/F/testInterfacePython/func/ClassParser.py",
+		"/F/testInterfacePython/func/ClassInterface.py",
+		"/F/testInterfacePython/interfaceVision.py",
+		"/F/testInterfacePython/func/fonctionInterface.py",
+		"/F/testInterfacePython/func/classParser.py",
+		"/F/testInterfacePython/func/kitListe.py",
+		"/F/Kit liste Python/kitListe.py",
+		"/F/Kit liste Python/classParser.py",
+		"/F/pcbToVision/func/fonctionVision.py",
+		"/F/testInterfacePython/fonctionInterface.py",
+		"/F/pcbToVision/func/fonctionClassic.py",
+		"/F/testInterfacePython/test.py",
+		"/F/testInterfacePython/interface.py",
+		"/F/Kit liste Python/test.txt",
+		"/C/Users/Sotaz/Desktop/donnees.py",
+		"/C/Users/Sotaz/Desktop/pendu.py",
+		"/C/Users/Sotaz/Desktop/fonctions.py",
+		"/F/pcbToVision/testCSV.py",
+		"/F/pcbToVision/testComp.py",
+		"/F/pcbToVision/test2.py",
+		"/F/pcbToVision/__pycache__/testCSV.cpython-36.pyc",
+		"/F/pcbToVision/pcbToVision",
+		"/E/Documents/pcbToVision/testComp.py",
+		"/E/Documents/Prog/copie.bat",
+		"/C/Users/Sotaz/Desktop/testComp.py",
+		"/C/téléchargementFichierComp.py",
+		"/C/new_file.txt",
+		"/F/pcbToVision/téléchargementFichierComp.py"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "main.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

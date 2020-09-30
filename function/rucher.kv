@@ -1,0 +1,57 @@
+# coding: utf-8
+#:kivy 1.9.1
+
+<Rucher>:
+    gridRuche: grid_ruche.__self__
+    gridSuppr: gridSuppr.__self__
+    # a voir le fonctionnement
+    btn2: btn_2.__self__
+    btn1: btn_1.__self__
+    btn3: btn_3.__self__
+    _blButton: blButton.__self__
+    canvas:
+        Rectangle:
+            pos: self.center_x - (self.width/2), self.center_y-(self.height/3)
+            size: self.width, 0
+
+    GridLayout:
+        id: grid_ruche
+        cols: 4
+        size: root.width, root.height-(root.center_y-(root.height/3))
+        top: root.y
+        pos: root.x, root.center_y-(root.height/3)+10
+
+    GridLayout:
+        id: gridSuppr
+        cols: 4
+        size: root.width, root.height
+        top: root.y
+        pos: root.x, root.center_y-(root.height/2)
+
+    BoxLayout:
+        id: blButton
+        orientation: "horizontal"
+        width: root.width
+        Button:
+            id: btn_1
+            text: 'Ajouter une ruche'
+            on_press: root.addRuche()
+            on_release: print("la ruche est ajoute...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))
+
+        Button:
+            id: btn_2
+            text: 'Supprimer une ruche'
+            on_press: root.delRuche()
+            on_release: print("le rucher est supprimée...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))
+
+        Button:
+            id: btn_3
+            text: 'Retour'
+            on_press: root.closeRucher()
+            on_release: print("le rucher est supprime...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))

@@ -1,0 +1,111 @@
+# coding: utf-8
+#:kivy 1.9.1
+
+<Separator@Widget>:
+    canvas:
+        Color:
+            rgba: 0, 0, 0, 0
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<Ruche>:
+    _ch1: ch1.__self__
+    _ch2: ch2.__self__
+    _ti1: ti1.__self__
+    _text1: text1.__self__
+    _btnCom: btnCom.__self__
+    _btnRetour: btnRetour.__self__
+    _sp1: sp1.__self__
+    _boxButton: boxButton.__self__
+    _gridCheck: gridCheck.__self__
+    _gridRuche: gridRuche.__self__
+
+    TextInput:
+        id: text1
+        multiline: True
+        top: root.height
+        width: root.width
+        height: root.height-(root.center_y-(root.height/3))
+        on_text_validate: root.validComment(self)
+
+    GridLayout:
+        id: gridRuche
+        cols: 4
+        size: root.width, root.height
+        top: root.y
+        pos: root.x, root.center_y-(root.height/2)
+
+    GridLayout:
+        id: gridCheck
+        # height: root.height-(root.center_y-(root.height/3))
+        width: root.width
+        top: root.height
+        row_default_height: 30
+        # pos: root.x, root.center_y-(root.height/3)+10
+        rows: 3
+        cols: 4
+        padding: 50
+        spacing: 50
+        Label:
+            text: "Nourrissement"
+        CheckBox:
+            id: ch1
+            color:.294, .761, .623
+            on_active: print("bob")
+            size_hint_x: .20
+        Separator
+        Separator
+
+        Label:
+            text: "Traitement"
+        CheckBox:
+            id: ch2
+            color:.294, .761, .623
+            on_active: print("bob")
+            size_hint_x: .20
+        Separator
+        Separator
+
+        Label:
+            text: "Nombre hausses"
+        TextInput:
+            id: ti1
+            multiline: False
+            # color:.294, .761, .623
+            size_hint_x: .15
+            # on_text_validate: root.changeNbHausses(self)
+        Separator
+        Separator
+
+    BoxLayout:
+        id: boxButton
+        orientation: "horizontal"
+        width: root.width
+
+        Button:
+            id: btnCom
+            text: "Commentaire"
+            # text: root.getNum()
+            on_press: root.retourComment()
+            on_release: print("la ruche est ouverte...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))
+        # mon spacer
+        Button:
+            id: sp1
+            text: "Changer emplacement"
+            # text: root.getNum()
+            on_press: root.changerRucher()
+            on_release: print("la ruche est ouverte...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))
+
+        Button:
+            id: btnRetour
+            text: "Retour"
+            # text: root.getNum()
+            on_press: root.closeRuche()
+            on_release: print("la ruche est ouverte...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))

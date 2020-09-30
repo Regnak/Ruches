@@ -1,0 +1,73 @@
+# coding: utf-8
+#:kivy 1.9.1
+#:import win kivy.core.window
+
+
+
+<MainWindow>:
+    gridRucher: grid_rucher.__self__
+    gridSuppr: gridSuppr.__self__
+    # a voir le fonctionnement
+    btn2: btn_2.__self__
+    btn1: btn_1.__self__
+    btn3: btn_3.__self__
+    text1: text_1.__self__
+    _blButton: blButton.__self__
+
+    size_hint: 1,1
+
+    canvas:
+        Rectangle:
+            pos: self.center_x - (self.width/2), self.center_y-(self.height/3)
+            size: self.width, 0
+
+    GridLayout:
+        id: grid_rucher
+        cols: 4
+        size: root.width, root.height-(root.center_y-(root.height/3))
+        top: root.y
+        pos: root.x, root.center_y-(root.height/3)+10
+
+    GridLayout:
+        id: gridSuppr
+        cols: 4
+        size: root.width, root.height
+        top: root.y
+        pos: root.x, root.center_y-(root.height/2)
+
+    TextInput:
+        id: text_1
+        multiline: False
+        top: root.height
+        width: root.width
+        height: (root.center_y-(root.height/3)-5) - (root.center_y-(root.height/2))
+
+    BoxLayout:
+        id: blButton
+        orientation: "horizontal"
+        width: root.width
+        Button:
+            id: btn_1
+            text: 'Ajouter un Rucher'
+            on_press: root.addRucher()
+            on_release: print("le rucher est ajoute...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))
+
+        Button:
+            id: btn_2
+            text: 'Modifier un Rucher'
+            on_press: print("modifie le rucher")
+            on_release: print("le rucher est modifie...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))
+
+        Button:
+            id: btn_3
+            text: 'Supprimer un Rucher'
+            on_press: root.delRucher()
+            on_release: print("le rucher est supprime...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))
+
+
