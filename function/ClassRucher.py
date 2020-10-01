@@ -76,6 +76,7 @@ class Rucher(Widget):
             for elt in self.listRuche:
                 self.gridSuppr.add_widget(Button(text=str(elt.num), on_press=self.on_pressDel))
             self.add_widget(self.gridSuppr)
+            self.nbRuches -= 1
 
     def on_pressDel(self, Parent):
 

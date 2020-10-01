@@ -104,6 +104,7 @@ class Ruche(Widget):
             i += 1
         self.num = nbRuche + 1
         rucherBase.majGridRuche()
+        rucherBase.nbRuches -= 1
         self.rucher.nbRuches += 1
         self.rucher.majGridRuche()
 
