@@ -8,7 +8,9 @@
     btn2: btn_2.__self__
     btn1: btn_1.__self__
     btn3: btn_3.__self__
+    _text1: text_1.__self__
     _blButton: blButton.__self__
+
     canvas:
         Rectangle:
             pos: self.center_x - (self.width/2), self.center_y-(self.height/3)
@@ -27,6 +29,13 @@
         size: root.width, root.height
         top: root.y
         pos: root.x, root.center_y-(root.height/2)
+
+    TextInput:
+        id: text_1
+        multiline: False
+        top: root.height
+        width: root.width
+        height: (root.center_y-(root.height/3)-5) - (root.center_y-(root.height/2))
 
     BoxLayout:
         id: blButton

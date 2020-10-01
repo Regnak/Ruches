@@ -29,16 +29,32 @@ class Rucher(Widget):
             self.listRuche.append(ruche)
             self.nbRuches += 1
         self.majGridRuche()
+        self.remove_widget(self._text1)
         self.remove_widget(self.gridSuppr)
 
     def addRuche(self):
+        self.remove_widget(self._blButton)
+        self.remove_widget(self.gridRuche)
+
+        self._text1.text = "rentrer le numéro de la ruche ( unique )"
+        self._text1.bind(on_text_validate=self.textInputOn_enterAjout)
+        self.add_widget(self._text1)
+
+    def textInputOn_enterAjout(self, Parent):
+
         print("ajoute un widget dans la fenetre au-dessus pour la ruche")
         self.nbRuches += 1
         date = datetime.datetime.now()
-        self.bdd.insertData("T_ruches", {"num": self.nbRuches, "dateInstall": str(date), "nomRucher": self.nom, "nouri": False, "traite": False, "nbHausses": 0, "comment": ""})
-        ruche = Ruche(num=self.nbRuches, rucher=self, dateInstall=date, nouri=False, traite=False, nbHausses=0, comment="")
+        self.bdd.insertData("T_ruches", {"num": int(Parent.text), "dateInstall": str(date), "nomRucher": self.nom, "nouri": False, "traite": False, "nbHausses": 0, "comment": ""})
+        ruche = Ruche(num=int(Parent.text), rucher=self, dateInstall=date, nouri=False, traite=False, nbHausses=0, comment="")
         self.listRuche.append(ruche)
         self.majGridRuche()
+
+        self._text1.unbind(on_text_validate=self.textInputOn_enterAjout)
+
+        self.remove_widget(self._text1)
+        self.add_widget(self.gridRuche)
+        self.add_widget(self._blButton)
 
     def openRucher(self, state):
         self.inter.parent.add_widget(self)

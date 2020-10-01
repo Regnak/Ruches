@@ -25,5 +25,6 @@ if __name__ == '__main__':
 # reste a faire
 
     # exeption a chaque ajout / modif en base -> numérotation des ruches
+    # obliger un num unique aux ruches
     # des couleur ou autre pour indiquer l'état des ruches et rucher
     # point de design

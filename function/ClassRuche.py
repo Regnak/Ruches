@@ -90,7 +90,7 @@ class Ruche(Widget):
     def on_pressChange(self, parent):
         date = datetime.datetime.now()
         nbRuche = len(self.rucher.bdd.lectureRuche(parent.text))
-        self.rucher.bdd.insertData("T_ruches", {"num": (nbRuche + 1), "dateInstall": str(date), "nomRucher": parent.text, "nouri": self.nourri, "traite": self.traite, "nbHausses": self.nbHausses, "comment": self.comment})
+        self.rucher.bdd.insertData("T_ruches", {"num": self.num, "dateInstall": str(date), "nomRucher": parent.text, "nouri": self.nourri, "traite": self.traite, "nbHausses": self.nbHausses, "comment": self.comment})
         self.rucher.bdd.delRuche(self.num, self.rucher.nom)
 
         rucherBase = self.rucher
@@ -102,7 +102,7 @@ class Ruche(Widget):
             if rucherBase.listRuche[i].num == self.num:
                 self.rucher.listRuche.append(rucherBase.listRuche.pop(i))
             i += 1
-        self.num = nbRuche + 1
+        # self.num = nbRuche + 1
         rucherBase.majGridRuche()
         rucherBase.nbRuches -= 1
         self.rucher.nbRuches += 1
