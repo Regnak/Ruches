@@ -26,3 +26,4 @@ if __name__ == '__main__':
 
 
     # des couleur ou autre pour indiquer l'état des ruches et rucher
+    # point de design

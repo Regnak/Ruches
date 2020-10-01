@@ -43,6 +43,7 @@ class Rucher(Widget):
     def openRucher(self, state):
         self.inter.parent.add_widget(self)
         self.parent.remove_widget(self.inter)
+        print("le rucher est bien ouvert")
 
 
     def closeRucher(self):

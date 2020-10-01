@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/PycharmProjects/Ruches/.idea/Ruches.iml" filepath="$USER_HOME$/PycharmProjects/Ruches/.idea/Ruches.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ruches.iml" filepath="$PROJECT_DIR$/.idea/ruches.iml" />
     </modules>
   </component>
