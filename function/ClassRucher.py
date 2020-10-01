@@ -36,7 +36,7 @@ class Rucher(Widget):
         self.remove_widget(self._blButton)
         self.remove_widget(self.gridRuche)
 
-        self._text1.text = "rentrer le numéro de la ruche ( unique )"
+        self._text1.hint_text = "rentrer le numéro de la ruche ( unique )"
         self._text1.bind(on_text_validate=self.textInputOn_enterAjout)
         self.add_widget(self._text1)
 

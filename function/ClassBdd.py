@@ -30,7 +30,7 @@ class MaBdd:
                 nbHausses INT,
                 comment TEXT,
                 FOREIGN KEY (nomRucher) REFERENCES T_rucher(nom)
-                PRIMARY KEY (num, nomRucher)
+                PRIMARY KEY (num)
             )
             """)
         self.conn.commit()
