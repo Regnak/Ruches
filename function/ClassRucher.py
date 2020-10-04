@@ -28,7 +28,7 @@ class Rucher(Widget):
             ruche = Ruche(num=elt[0], rucher=self, dateInstall=elt[1], nouri=elt[2], traite=elt[3], nbHausses=elt[4], comment=elt[5])
             self.listRuche.append(ruche)
             self.nbRuches += 1
-        self.maj_gridRuche()
+        self.majGridRuche()
         self.remove_widget(self._gridSuppr)
         self.remove_widget(self._buttonChoixRuche)
         self.remove_widget(self._buttonChoixRuche2)
@@ -56,7 +56,7 @@ class Rucher(Widget):
                              "traite": False, "nbHausses": 0, "comment": ""})
         ruche = Ruche(num=numRuche, rucher=self, dateInstall=date, nouri=False, traite=False, nbHausses=0, comment="")
         self.listRuche.append(ruche)
-        self.maj_gridRuche()
+        self.majGridRuche()
         self.remove_widget(self._buttonChoixRuche)
         self.add_widget(self._blButton)
 
@@ -76,7 +76,7 @@ class Rucher(Widget):
         self.parent.add_widget(self.inter)
         self.inter.parent.remove_widget(self)
 
-    def maj_gridRuche(self):
+    def majGridRuche(self):
         # clear tout les elements de la grille
         for child in self._gridRuche.children[:]:
             self._gridRuche.remove_widget(child)
@@ -121,7 +121,7 @@ class Rucher(Widget):
                 del self.listRuche[i]
                 break
             i += 1
-        self.maj_gridRuche()
+        self.majGridRuche()
         self.add_widget(self._gridRuche)
         self.add_widget(self._blButton)
         self.remove_widget(self._buttonChoixRuche2)
