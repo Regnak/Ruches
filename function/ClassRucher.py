@@ -28,32 +28,42 @@ class Rucher(Widget):
             ruche = Ruche(num=elt[0], rucher=self, dateInstall=elt[1], nouri=elt[2], traite=elt[3], nbHausses=elt[4], comment=elt[5])
             self.listRuche.append(ruche)
             self.nbRuches += 1
-        self.majGridRuche()
-        self.remove_widget(self._text1)
-        self.remove_widget(self.gridSuppr)
+        self.maj_gridRuche()
+        self.remove_widget(self._gridSuppr)
+        self.remove_widget(self._buttonChoixRuche)
+        self.remove_widget(self._buttonChoixRuche2)
 
+    # met a jour l'interface pour le futur ajout
     def addRuche(self):
+
         self.remove_widget(self._blButton)
-        self.remove_widget(self.gridRuche)
+        self.add_widget(self._buttonChoixRuche)
 
-        self._text1.hint_text = "rentrer le numéro de la ruche ( unique )"
-        self._text1.bind(on_text_validate=self.textInputOn_enterAjout)
-        self.add_widget(self._text1)
-
-    def textInputOn_enterAjout(self, Parent):
-
-        print("ajoute un widget dans la fenetre au-dessus pour la ruche")
+    def addNewRuche(self):
+        numRuche = 1
+        # compare dans l'ordre croisant les id de ruche à un itérateur qui débute a 1 pour prendre le premier id disponible
+        for i, elt in enumerate(sorted(self.bdd.lectureIdRuche()), 1):
+            if i != elt:
+                print(elt)
+                numRuche = elt
+                break
+            else:
+                numRuche = elt + 1
         self.nbRuches += 1
         date = datetime.datetime.now()
-        self.bdd.insertData("T_ruches", {"num": int(Parent.text), "dateInstall": str(date), "nomRucher": self.nom, "nouri": False, "traite": False, "nbHausses": 0, "comment": ""})
-        ruche = Ruche(num=int(Parent.text), rucher=self, dateInstall=date, nouri=False, traite=False, nbHausses=0, comment="")
+        self.bdd.insertData("T_ruches",
+                            {"num": numRuche, "dateInstall": str(date), "nomRucher": self.nom, "nouri": False,
+                             "traite": False, "nbHausses": 0, "comment": ""})
+        ruche = Ruche(num=numRuche, rucher=self, dateInstall=date, nouri=False, traite=False, nbHausses=0, comment="")
         self.listRuche.append(ruche)
-        self.majGridRuche()
+        self.maj_gridRuche()
+        self.remove_widget(self._buttonChoixRuche)
+        self.add_widget(self._blButton)
 
-        self._text1.unbind(on_text_validate=self.textInputOn_enterAjout)
-
-        self.remove_widget(self._text1)
-        self.add_widget(self.gridRuche)
+    def addStockRuche(self):
+        # a faire
+        print("a faire")
+        self.remove_widget(self._buttonChoixRuche)
         self.add_widget(self._blButton)
 
     def openRucher(self, state):
@@ -66,37 +76,44 @@ class Rucher(Widget):
         self.parent.add_widget(self.inter)
         self.inter.parent.remove_widget(self)
 
-    def majGridRuche(self):
+    def maj_gridRuche(self):
         # clear tout les elements de la grille
-        for child in self.gridRuche.children[:]:
-            self.gridRuche.remove_widget(child)
+        for child in self._gridRuche.children[:]:
+            self._gridRuche.remove_widget(child)
         # definir la taille du gridLayout
-        # self.gridRuche.cols = 4
+        # self._gridRuche.cols = 4
         # si on depasse 4 ruchers ajouter une ligne
         if self.nbRuches % 4 != 0:
             self.nbRows = int(self.nbRuches / 4) + 1
-        self.gridRuche.rows = self.nbRows
+        self._gridRuche.rows = self.nbRows
         # ajouter tout les elements contenus dans la liste
         for elt in self.listRuche:
             elt.btn.text = elt.getNum()
-            self.gridRuche.add_widget(elt.btn)
+            self._gridRuche.add_widget(elt.btn)
 
     def delRuche(self):
+        self.remove_widget(self._blButton)
+        self.add_widget(self._buttonChoixRuche2)
+
+    def defDelRuche(self):
         if self.nbRuches > 0:
             self.remove_widget(self._blButton)
             # ici commence l'ajout
-            self.remove_widget(self.gridRuche)
-            for child in self.gridSuppr.children[:]:
-                self.gridSuppr.remove_widget(child)
-            self.gridSuppr.rows = self.nbRows
+            self.remove_widget(self._gridRuche)
+            for child in self._gridSuppr.children[:]:
+                self._gridSuppr.remove_widget(child)
+            self._gridSuppr.rows = self.nbRows
             for elt in self.listRuche:
-                self.gridSuppr.add_widget(Button(text=str(elt.num), on_press=self.on_pressDel))
-            self.add_widget(self.gridSuppr)
+                self._gridSuppr.add_widget(Button(text=str(elt.num), on_press=self.on_pressDel))
+            self.add_widget(self._gridSuppr)
             self.nbRuches -= 1
+
+    def moveToStockRuche(self):
+        print("a faire")
 
     def on_pressDel(self, Parent):
 
-        self.remove_widget(self.gridSuppr)
+        self.remove_widget(self._gridSuppr)
         i = 0
         j = len(self.listRuche)
         while i < j:
@@ -104,8 +121,9 @@ class Rucher(Widget):
                 del self.listRuche[i]
                 break
             i += 1
-        self.majGridRuche()
-        self.add_widget(self.gridRuche)
+        self.maj_gridRuche()
+        self.add_widget(self._gridRuche)
         self.add_widget(self._blButton)
+        self.remove_widget(self._buttonChoixRuche2)
         # le supprimer aussi dans la base
         self.bdd.delRuche(Parent.text, self.nom)

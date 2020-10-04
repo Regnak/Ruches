@@ -24,7 +24,10 @@ if __name__ == '__main__':
 
 # reste a faire
 
+    # créer fonction qui récup tous les id des ruches existante
+    # a la suppression d'un rucher mettre toute les ruche dans le stock
+        # une ruche en stock a nomRucher à NULL en base
+    # choisir le lieu de suppression d'un ruche
     # exeption a chaque ajout / modif en base -> numérotation des ruches
-    # obliger un num unique aux ruches
     # des couleur ou autre pour indiquer l'état des ruches et rucher
     # point de design

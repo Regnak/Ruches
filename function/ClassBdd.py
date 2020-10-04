@@ -63,6 +63,16 @@ class MaBdd:
             print(row[0])
         return listRucher
 
+    def lectureIdRuche(self):
+        listRuche = list()
+        self.cursor.execute("""SELECT num 
+            FROM T_ruches""")
+        # row est un pointeur sur le debut de retour de la requete
+        for row in self.cursor:
+            listRuche.append(row[0])
+            print(row[0])
+        return listRuche
+
     def lectureRuche(self, rucher):
         listRuche = list()
         self.cursor.execute("""SELECT * 

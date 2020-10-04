@@ -2,14 +2,11 @@
 #:kivy 1.9.1
 
 <Rucher>:
-    gridRuche: grid_ruche.__self__
-    gridSuppr: gridSuppr.__self__
-    # a voir le fonctionnement
-    btn2: btn_2.__self__
-    btn1: btn_1.__self__
-    btn3: btn_3.__self__
-    _text1: text_1.__self__
+    _gridRuche: grid_ruche.__self__
+    _gridSuppr: gridSuppr.__self__
     _blButton: blButton.__self__
+    _buttonChoixRuche: buttonChoixRuche.__self__
+    _buttonChoixRuche2: buttonChoixRuche2.__self__
 
     canvas:
         Rectangle:
@@ -30,13 +27,6 @@
         top: root.y
         pos: root.x, root.center_y-(root.height/2)
 
-    TextInput:
-        id: text_1
-        multiline: False
-        top: root.height
-        width: root.width
-        height: (root.center_y-(root.height/3)-5) - (root.center_y-(root.height/2))
-
     BoxLayout:
         id: blButton
         orientation: "horizontal"
@@ -45,7 +35,7 @@
             id: btn_1
             text: 'Ajouter une ruche'
             on_press: root.addRuche()
-            on_release: print("la ruche est ajoute...")
+            on_release: print("choix ajout ruche...")
             on_state:
                 print("mycurrent state is {}".format(self.state))
 
@@ -62,5 +52,44 @@
             text: 'Retour'
             on_press: root.closeRucher()
             on_release: print("le rucher est supprime...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))
+
+    BoxLayout:
+        id: buttonChoixRuche
+        orientation: "horizontal"
+        width: root.width
+        Button:
+            id: btn_1
+            text: 'Ajouter nouvelle ruche'
+            on_press: root.addNewRuche()
+            on_release: print("nouvelle ruche ajoutée...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))
+
+        Button:
+            id: btn_2
+            text: 'Ruche du stock'
+            on_press: root.addStockRuche()
+            on_release: print("Ruche du stock ajoutée...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))
+    BoxLayout:
+        id: buttonChoixRuche2
+        orientation: "horizontal"
+        width: root.width
+        Button:
+            id: btn_1
+            text: 'Supprimer la ruche'
+            on_press: root.defDelRuche()
+            on_release: print("nouvelle ruche ajoutée...")
+            on_state:
+                print("mycurrent state is {}".format(self.state))
+
+        Button:
+            id: btn_2
+            text: 'Rentrer dans le stock'
+            on_press: root.moveToStockRuche()
+            on_release: print("Ruche du stock ajoutée...")
             on_state:
                 print("mycurrent state is {}".format(self.state))
