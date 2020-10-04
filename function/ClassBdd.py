@@ -33,7 +33,14 @@ class MaBdd:
                 PRIMARY KEY (num)
             )
             """)
+
+        self.cursor.execute("""
+            REPLACE INTO T_rucher(nom, dateInstall, lieu)
+            VALUES('__Stock', '2020-10-04', 'here');
+            """)
+
         self.conn.commit()
+
 
     def closeConn(self):
         self.conn.close() 

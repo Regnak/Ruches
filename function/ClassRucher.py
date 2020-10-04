@@ -108,9 +108,6 @@ class Rucher(Widget):
             self.add_widget(self._gridSuppr)
             self.nbRuches -= 1
 
-    def moveToStockRuche(self):
-        print("a faire")
-
     def on_pressDel(self, Parent):
 
         self.remove_widget(self._gridSuppr)
@@ -127,3 +124,26 @@ class Rucher(Widget):
         self.remove_widget(self._buttonChoixRuche2)
         # le supprimer aussi dans la base
         self.bdd.delRuche(Parent.text, self.nom)
+
+    def moveToStockRuche(self):
+        if self.nbRuches > 0:
+            self.remove_widget(self._blButton)
+            # ici commence l'ajout
+            self.remove_widget(self._gridRuche)
+            for child in self._gridSuppr.children[:]:
+                self._gridSuppr.remove_widget(child)
+            self._gridSuppr.rows = self.nbRows
+            for elt in self.listRuche:
+                self._gridSuppr.add_widget(Button(text=str(elt.num), on_press=self.on_pressToStock))
+            self.add_widget(self._gridSuppr)
+            self.nbRuches -= 1
+
+    def on_pressToStock(self, parent):
+        self.on_pressDel(parent)
+        # ajout de la ruche dans le rucher Stock dans la Base sans tenir compte des attribut de celle-ci
+        date = datetime.datetime.now()
+        self.bdd.insertData("T_ruches",
+                            {"num": int(parent.text), "dateInstall": str(date), "nomRucher": "__Stock", "nouri": False,
+                             "traite": False, "nbHausses": 0, "comment": ""})
+
+

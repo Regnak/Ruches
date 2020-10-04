@@ -23,8 +23,10 @@ class MainWindow(Widget):
         self.bdd = ClassBdd.MaBdd()
         # charger mes donnees depuis la base si présente
         for elt in self.bdd.lectureRucher():
-            rucher = Rucher(name=str(elt), bdd=self.bdd, inter=self)
-            self.listRucher.append(rucher)
+            # si différent du rucher servant de stock
+            if elt != "__Stock":
+                rucher = Rucher(name=str(elt), bdd=self.bdd, inter=self)
+                self.listRucher.append(rucher)
         self.majGridRucher()
         # self.textInput = TextInput()
         self.remove_widget(self.text1)
