@@ -8,9 +8,12 @@ from kivy.uix.button import Button
 from function.ClassRuche import Ruche
 from function import ClassBdd
 import datetime
+import math
+
 
 class Rucher(Widget):
     """widget representant un rucher et affichant les ruches qu'il contient"""
+
     def __init__(self, **kwargs):
 
         super(Rucher, self).__init__()
@@ -25,7 +28,8 @@ class Rucher(Widget):
         self.nbRuches = 0
         self.listRuche = []
         for elt in self.bdd.lectureRuche(self.nom):
-            ruche = Ruche(num=elt[0], rucher=self, dateInstall=elt[1], nouri=elt[2], traite=elt[3], nbHausses=elt[4], comment=elt[5])
+            ruche = Ruche(num=elt[0], rucher=self, dateInstall=elt[1], nouri=elt[2], traite=elt[3], nbHausses=elt[4],
+                          comment=elt[5])
             self.listRuche.append(ruche)
             self.nbRuches += 1
         self.majGridRuche()
@@ -42,13 +46,12 @@ class Rucher(Widget):
     def addNewRuche(self):
         numRuche = 1
         # compare dans l'ordre croisant les id de ruche à un itérateur qui débute a 1 pour prendre le premier id disponible
-        for i, elt in enumerate(sorted(self.bdd.lectureIdRuche()), 1):
-            if i != elt:
-                print(elt)
-                numRuche = elt
+        for i in range(1, 2 ^ 32):
+            if i not in self.bdd.lectureIdRuche():
+                print(str(i))
+                numRuche = i
                 break
-            else:
-                numRuche = elt + 1
+
         self.nbRuches += 1
         date = datetime.datetime.now()
         self.bdd.insertData("T_ruches",
@@ -70,7 +73,6 @@ class Rucher(Widget):
         self.inter.parent.add_widget(self)
         self.parent.remove_widget(self.inter)
         print("le rucher est bien ouvert")
-
 
     def closeRucher(self):
         self.parent.add_widget(self.inter)
@@ -145,5 +147,3 @@ class Rucher(Widget):
         self.bdd.insertData("T_ruches",
                             {"num": int(parent.text), "dateInstall": str(date), "nomRucher": "__Stock", "nouri": False,
                              "traite": False, "nbHausses": 0, "comment": ""})
-
-

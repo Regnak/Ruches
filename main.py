@@ -6,7 +6,7 @@ from function import ClassMainWindow
 from kivy.lang import Builder
 
 
-kivy.require('1.9.1')
+kivy.require('2.0.0')
 
 # load les designs des deux classes concernées
 Builder.load_file('function/rucher.kv')
