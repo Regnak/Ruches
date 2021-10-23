@@ -25,9 +25,11 @@ if __name__ == '__main__':
 # reste a faire
 
     # créer fonction qui récup tous les id des ruches existante
-    # a la suppression d'un rucher mettre toute les ruche dans le stock si il y en a
+    # ajouter un nom facultatif aux ruches pour se repérer dans un rucher -> nom d'affichage si définit
+    # a la suppression d'un rucher mettre toute les ruches dans le stock si il y en a
         # une ruche en stock a nomRucher à NULL en base
-    # choisir le lieu de suppression d'un ruche
+    # --> supprimer la notion de stock qui est useless
+    # choisir le lieu de suppression d'une ruche
     # exeption a chaque ajout / modif en base -> numérotation des ruches
     # des couleur ou autre pour indiquer l'état des ruches et rucher
     # point de design
