@@ -67,13 +67,6 @@
             on_state:
                 print("mycurrent state is {}".format(self.state))
 
-        Button:
-            id: btn_2
-            text: 'Ruche du stock'
-            on_press: root.addStockRuche()
-            on_release: print("Ruche du stock ajoutée...")
-            on_state:
-                print("mycurrent state is {}".format(self.state))
     BoxLayout:
         id: buttonChoixRuche2
         orientation: "horizontal"
@@ -83,13 +76,5 @@
             text: 'Supprimer la ruche'
             on_press: root.defDelRuche()
             on_release: print("nouvelle ruche ajoutée...")
-            on_state:
-                print("mycurrent state is {}".format(self.state))
-
-        Button:
-            id: btn_2
-            text: 'Rentrer dans le stock'
-            on_press: root.moveToStockRuche()
-            on_release: print("Ruche du stock ajoutée...")
             on_state:
                 print("mycurrent state is {}".format(self.state))

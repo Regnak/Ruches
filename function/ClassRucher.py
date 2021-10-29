@@ -63,11 +63,11 @@ class Rucher(Widget):
         self.remove_widget(self._buttonChoixRuche)
         self.add_widget(self._blButton)
 
-    def addStockRuche(self):
+    '''def addStockRuche(self):
         # a faire
         print("a faire")
         self.remove_widget(self._buttonChoixRuche)
-        self.add_widget(self._blButton)
+        self.add_widget(self._blButton)'''
 
     def openRucher(self, state):
         self.inter.parent.add_widget(self)
@@ -127,7 +127,7 @@ class Rucher(Widget):
         # le supprimer aussi dans la base
         self.bdd.delRuche(Parent.text, self.nom)
 
-    def moveToStockRuche(self):
+    '''def moveToStockRuche(self):
         if self.nbRuches > 0:
             self.remove_widget(self._blButton)
             # ici commence l'ajout
@@ -146,4 +146,4 @@ class Rucher(Widget):
         date = datetime.datetime.now()
         self.bdd.insertData("T_ruches",
                             {"num": int(parent.text), "dateInstall": str(date), "nomRucher": "__Stock", "nouri": False,
-                             "traite": False, "nbHausses": 0, "comment": ""})
+                             "traite": False, "nbHausses": 0, "comment": ""})'''
